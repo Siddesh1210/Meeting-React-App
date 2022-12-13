@@ -3,6 +3,7 @@ import Structure from './Structure';
 import {useState , useEffect} from 'react';
 function ShowPage()
 {
+    const [loadStatus,setLoadStatus]=useState(true);
     const[update,setUpdate]=useState([]);
     useEffect(()=>
     {
@@ -17,6 +18,7 @@ function ShowPage()
                         ...data[key]                    
                 }
                 meetings.push(meet_detail);
+                setLoadStatus(false);
                 setUpdate(meetings);
             }
     })
@@ -24,11 +26,25 @@ function ShowPage()
     return(
         <div>
             <h1 className='meet-schedule'>Your Meeting Schedule </h1>
+            {/* animation gif */}
+            <div class={loadStatus?'center':'d-none'}>
+                <div class="wave"></div>
+                <div class="wave"></div>
+                <div class="wave"></div>
+                <div class="wave"></div>
+                <div class="wave"></div>
+                <div class="wave"></div>
+                <div class="wave"></div>
+                <div class="wave"></div>
+                <div class="wave"></div>
+                <div class="wave"></div>
+            </div>
+            {/* end gif */}
             <div>
                 {
                     update.map((meet)=>
                     {
-                        return <Structure title={meet.title} link={meet.link} desc={meet.description} />
+                        return <Structure title={meet.title} date={meet.date_time} link={meet.link} desc={meet.description} />
                     })
                 }
             </div>
