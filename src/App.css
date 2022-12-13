@@ -54,8 +54,6 @@ body{
   padding: 0px 10px;
   width:98vw;
   box-sizing: border-box;
-  /* background-color: #449284; */
-  /* background-image: linear-gradient(90deg, #449284 0%, #fffd92 100%); */
   background-clip: text;
   background-color: #4158D0;
   cursor: pointer;
@@ -63,15 +61,8 @@ body{
   background-image: linear-gradient(43deg, #4158D0 0%,#C850C0 46%,#FFCC70 100%);
 
 }
-@media only screen and (max-width:320px)
-{
-  .nav-link{
-    padding-left: 10px;
-  }
-  .logo{
-    padding-right:10px;
-  }
-}
+
+
 .ul-link
 {
   display: flex;
@@ -87,6 +78,16 @@ body{
   font-size: 20px;
   text-align: center;
 }
+
+@media only screen and (max-width:320px)
+{
+  .nav-link{
+    padding-left: 10px;
+  }
+  .logo{
+    padding-right:10px;
+  }
+} 
 
 .heading , .tagline
 {
@@ -490,3 +491,14 @@ body{
   }
 }
  /* animation end */
+
+ .show-msg
+ {
+  margin:20px auto;
+  text-align: center;
+  background-clip: text;
+  background-color: #4158D0;
+  color:transparent;
+  background-image: linear-gradient(43deg, #4158D0 0%,#C850C0 30%,#ffffff 100%);
+  z-index: 10000;
+ }
